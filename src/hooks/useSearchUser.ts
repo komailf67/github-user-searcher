@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ISucceedSearchUserResDTO } from '../types/DTO/searchUser';
+import { ISucceedSearchUserResDTO } from 'types/DTO/searchUser';
 
 export const useSearchUser = () => {
   const [isFetching, setIsFetching] = useState<boolean>(false);

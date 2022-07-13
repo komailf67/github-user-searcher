@@ -1,6 +1,6 @@
-import SearchInput from '../../components/search/SearchInput';
-import UserDetails from '../../components/search/UserDetails';
-import { useSearchUser } from '../../hooks/useSearchUser';
+import { useSearchUser } from 'hooks/useSearchUser';
+import SearchInput from 'components/search/SearchInput';
+import UserDetails from 'components/search/UserDetails';
 
 const SearchPage = () => {
   const { userDetails, fetcher } = useSearchUser();

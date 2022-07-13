@@ -1,5 +1,5 @@
 import React from 'react';
-import { ISucceedSearchUserResDTO } from '../../../types/DTO/searchUser';
+import { ISucceedSearchUserResDTO } from 'types/DTO/searchUser';
 
 interface IUserDetailsProps {
   data: ISucceedSearchUserResDTO;
