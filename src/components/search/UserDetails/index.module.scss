@@ -1,0 +1,124 @@
+@import 'scss/variables';
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin: $vertical_margin 0rem;
+}
+.header {
+  display: flex;
+  padding-left: 2rem;
+  align-items: center;
+  border-radius: 1rem;
+  background: linear-gradient(35deg, $black_dark, $main_color);
+  height: 5rem;
+  margin-top: $vertical_margin;
+  margin-bottom: $vertical_margin;
+  color: #fff;
+  svg {
+    color: red;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  text-decoration: none;
+  background: $default_gradient;
+  width: 20rem;
+  height: 10rem;
+
+  div {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  h4 {
+    color: white;
+    font-size: 1.8rem;
+  }
+  svg {
+    color: red;
+    font-size: 2.5rem;
+  }
+}
+
+.info {
+  display: flex;
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+  background: $default_gradient;
+  width: 100%;
+  .imageWrapper {
+    width: 30%;
+    height: 15rem;
+    img {
+      height: 100%;
+      border-radius: 1rem;
+    }
+  }
+  .detailsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+  }
+}
+
+.infoList {
+  display: flex;
+  margin-left: 2rem;
+  margin-bottom: $vertical_margin;
+  div.title {
+    h3 {
+      color: $titles_color;
+      width: 7rem;
+    }
+  }
+  div.infoValue {
+    h3 {
+      color: $value_color;
+    }
+  }
+}
+
+.repositories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .repoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+
+    background: $default_gradient;
+    width: 48%;
+    height: 11rem;
+
+    .item {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 1rem;
+      h4 {
+        margin-left: 1rem;
+        color: $value_color;
+        &.link {
+          cursor: pointer;
+        }
+      }
+
+      svg {
+        color: red;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

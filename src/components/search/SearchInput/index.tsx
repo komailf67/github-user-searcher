@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import styles from './index.module.scss';
+import { FaSearch } from 'react-icons/fa';
 
 interface ISearchInputProps {
   fetchUser: (userName: string) => Promise<void>;
@@ -7,22 +9,25 @@ const SearchInput: React.FC<ISearchInputProps> = (props) => {
   const { fetchUser } = props;
   const [userName, setUserName] = useState('');
 
-  const handleSearchUser = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    await fetchUser(userName);
+  const handleSearchUser = async (
+    event: React.MouseEvent<SVGAElement, MouseEvent> &
+      React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (event.key === 'Enter' || event.type === 'click') {
+      await fetchUser(userName);
+    }
   };
   return (
-    <form onSubmit={handleSearchUser}>
+    <div className={styles.form}>
       <div>
-        <div>
-          <input
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </div>
+        <input
+          onKeyUp={handleSearchUser}
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <FaSearch onClick={handleSearchUser} />
       </div>
-      <button>Search User</button>
-    </form>
+    </div>
   );
 };
 

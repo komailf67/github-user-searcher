@@ -1,0 +1,26 @@
+@import 'scss/variables';
+
+.form {
+  margin-top: $vertical_margin;
+  div {
+    width: 100%;
+    position: relative;
+  }
+  input {
+    background: $default_gradient;
+    font-size: 1.5rem;
+    color: $white_color;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+    width: 100%;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(100%, -50%);
+    color: $white_color;
+  }
+}
