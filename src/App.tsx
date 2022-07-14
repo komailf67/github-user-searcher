@@ -1,14 +1,7 @@
-import { Route, Routes } from 'react-router-dom';
-import SearchPage from './pages/search';
-import HistoryPage from './pages/history';
+import Routing from 'Routing';
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/search" element={<SearchPage />} />
-      <Route path="/history" element={<HistoryPage />} />
-    </Routes>
-  );
+  return <Routing />;
 }
 
 export default App;
