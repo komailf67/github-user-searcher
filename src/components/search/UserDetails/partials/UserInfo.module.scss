@@ -1,0 +1,61 @@
+@import 'scss/variables';
+.info {
+  display: flex;
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+  background: $default_gradient;
+  width: 100%;
+  .imageWrapper {
+    width: 30%;
+    img {
+      height: auto;
+      width: 100%;
+      border-radius: 1rem;
+    }
+  }
+  .detailsWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+  }
+}
+
+.infoList {
+  display: flex;
+  margin-left: 2rem;
+  margin-bottom: $vertical_margin;
+  div.title {
+    h2 {
+      color: $titles_color;
+      width: 7rem;
+    }
+  }
+  div.infoValue {
+    margin-left: 2rem;
+    h2 {
+      color: $value_color;
+      word-break: break-all;
+    }
+  }
+}
+
+@media (max-width: 601px) {
+  .info {
+    .imageWrapper {
+      width: 40%;
+      img {
+        height: auto;
+        width: 100%;
+        border-radius: 1rem;
+        min-height: 5rem;
+        min-width: 5rem;
+      }
+    }
+    .detailsWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

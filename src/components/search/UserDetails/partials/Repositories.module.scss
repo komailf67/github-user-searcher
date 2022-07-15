@@ -1,0 +1,39 @@
+@import 'scss/variables';
+
+.repositories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .repoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+    background: $default_gradient;
+    width: 48%;
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      margin-left: 0.5rem;
+      h2 {
+        margin-left: 1rem;
+        color: $value_color;
+        word-break: break-all;
+        &.link {
+          cursor: pointer;
+        }
+      }
+      .iconWrapper {
+        width: 2rem;
+        svg {
+          color: red;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
