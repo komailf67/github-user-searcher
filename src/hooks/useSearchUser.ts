@@ -17,6 +17,7 @@ export const useSearchUser = () => {
   const fetcher = async (userName: string) => {
     setIsFetching(true);
     setUserDetails(null);
+    setError(null);
     await fetch(`${baseUrl}users/${userName}`)
       .then((response) => {
         response
@@ -30,7 +31,7 @@ export const useSearchUser = () => {
             }
           })
           .catch((err) => {
-            setError(`${err.message}: error in fetching user info`);
+            setError(`${err.message} error in fetching user info`);
             setIsFetching(false);
             setUserDetails(null);
           });

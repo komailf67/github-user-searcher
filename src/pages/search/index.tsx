@@ -3,9 +3,10 @@ import SearchInput from 'components/search/SearchInput';
 import UserDetails from 'components/search/UserDetails';
 import styles from './index.module.scss';
 import Spinner from 'components/common/Spinner';
+import Error from 'components/common/Error';
 
 const SearchPage = () => {
-  const { userDetails, fetcher, isFetching } = useSearchUser();
+  const { userDetails, fetcher, isFetching, error } = useSearchUser();
   return (
     <>
       <SearchInput fetchUser={fetcher} />
@@ -14,6 +15,7 @@ const SearchPage = () => {
           <Spinner />
         </div>
       )}
+      {!!error && <Error>{error}</Error>}
       {!!userDetails && <UserDetails data={userDetails} />}
     </>
   );

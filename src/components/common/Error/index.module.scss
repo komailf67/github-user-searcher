@@ -1,0 +1,18 @@
+@import 'scss/variables';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+  border-radius: 1rem;
+  background: $default_gradient;
+  margin-top: $vertical_margin;
+  color: #fff;
+  svg {
+    color: red;
+    font-size: 2.5rem;
+    margin-bottom: $vertical_margin;
+  }
+}
