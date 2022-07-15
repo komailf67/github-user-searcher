@@ -37,6 +37,7 @@ const SearchInput: React.FC<ISearchInputProps> = (props) => {
           onKeyUp={handleSearchUser}
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
+          placeholder="Enter a username"
         />
         <div className={styles.searchIcon}>
           <FaSearch onClick={handleSearchUser} />
