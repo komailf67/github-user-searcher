@@ -16,6 +16,7 @@ export const useSearchUser = () => {
   const storage = new LocalStorageHandler();
   const fetcher = async (userName: string) => {
     setIsFetching(true);
+    setUserDetails(null);
     await fetch(`${baseUrl}users/${userName}`)
       .then((response) => {
         response
@@ -27,7 +28,6 @@ export const useSearchUser = () => {
               setError(null);
               fetchUserRepos(userName, data);
             }
-            setIsFetching(false);
           })
           .catch((err) => {
             setError(`${err.message}: error in fetching user info`);
