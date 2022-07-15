@@ -2,10 +2,7 @@
 
 .form {
   margin-top: $vertical_margin;
-  div {
-    width: 100%;
-    position: relative;
-  }
+  position: relative;
   input {
     background: $default_gradient;
     font-size: 1.5rem;
@@ -16,11 +13,27 @@
     outline: none;
     width: 100%;
   }
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translate(100%, -50%);
-    color: $white_color;
+  div {
+    svg {
+      cursor: pointer;
+    }
+    .searchIcon {
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translate(100%, -50%);
+        color: $white_color;
+      }
+    }
+    .historyIcon {
+      svg {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translate(100%, -50%);
+        color: $white_color;
+      }
+    }
   }
 }

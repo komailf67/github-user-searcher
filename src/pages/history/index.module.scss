@@ -1,0 +1,30 @@
+@import 'scss/variables';
+
+.wrapper {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  border-radius: 1rem;
+  background: $default_gradient;
+  margin-top: $vertical_margin;
+  color: #fff;
+  svg {
+    color: red;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  .lists {
+    margin-left: 1rem;
+    li {
+      cursor: pointer;
+      &:not(:last-child) {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}
+.search {
+  svg {
+    cursor: pointer;
+  }
+}

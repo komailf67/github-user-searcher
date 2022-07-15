@@ -10,6 +10,7 @@ import {
   FaLink,
   FaInfoCircle,
 } from 'react-icons/fa';
+import Header from '../../common/Header';
 interface IUserDetailsProps {
   data: TUserDetails;
 }
@@ -40,10 +41,7 @@ const UserDetails: React.FC<IUserDetailsProps> = (props) => {
           </div>
         </div>
       </div>
-      <div className={styles.header}>
-        <FaInfoCircle />
-        <h4>User Info</h4>
-      </div>
+      <Header leftIcon={<FaInfoCircle />} title="User Info" />
       <div className={styles.info}>
         <div className={styles.imageWrapper}>
           <img src={data.avatar_url} />
@@ -85,10 +83,7 @@ const UserDetails: React.FC<IUserDetailsProps> = (props) => {
       </div>
       {!!data.public_repos && (
         <>
-          <div className={styles.header}>
-            <FaDatabase />
-            <h4>Repositories</h4>
-          </div>
+          <Header leftIcon={<FaDatabase />} title="Repositories" />
           <div className={styles.repositories}>
             {data.repos.map((item, index) => (
               <div key={index} className={styles.repoBox}>

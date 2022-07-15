@@ -5,6 +5,7 @@ import {
   ISucceedSearchUserResDTO,
   TUserDetails,
 } from 'types/DTO/searchUser';
+import { LocalStorageHandler } from 'utils/localStorage';
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -12,6 +13,7 @@ export const useSearchUser = () => {
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [userDetails, setUserDetails] = useState<TUserDetails | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const storage = new LocalStorageHandler();
   const fetcher = async (userName: string) => {
     setIsFetching(true);
     await fetch(`${baseUrl}users/${userName}`)
@@ -54,6 +56,7 @@ export const useSearchUser = () => {
               throw new Error(data.message);
             } else {
               setUserDetails({ ...userInfo, repos: data });
+              storage.addNewUser('history', userName);
               setError(null);
               return data;
             }
