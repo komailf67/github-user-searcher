@@ -9,13 +9,16 @@ const HistoryPage = () => {
   const storage = new LocalStorageHandler();
   const history = storage.getUsers('history');
   const navigate = useNavigate();
+
   const handleSearchItem = (username: string) => {
     navigate(`${routes.search}?username=${username}`);
   };
+
   const handleDeleteHistory = () => {
     storage.clearAll();
     navigate(routes.search);
   };
+
   return (
     <div>
       <Header

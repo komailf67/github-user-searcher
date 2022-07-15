@@ -15,7 +15,11 @@ const SearchPage = () => {
           <Spinner />
         </div>
       )}
-      {!!error && <Error>{error}</Error>}
+      {!!error && (
+        <Error>
+          <h2>{error}</h2>
+        </Error>
+      )}
       {!!userDetails && <UserDetails data={userDetails} />}
     </>
   );

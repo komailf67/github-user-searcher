@@ -1,5 +1,4 @@
 type Tkeys = 'history';
-
 export class LocalStorageHandler {
   isAvailable: boolean;
 

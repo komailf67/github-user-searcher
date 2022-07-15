@@ -13,11 +13,13 @@ const SearchInput: React.FC<ISearchInputProps> = (props) => {
   const currentUser = searchParams.get('username');
   const [userName, setUserName] = useState(currentUser ?? '');
   const navigate = useNavigate();
+
   useEffect(() => {
     if (currentUser) {
       fetchUser(userName);
     }
   }, []);
+
   const handleSearchUser = (
     event: React.MouseEvent<SVGAElement, MouseEvent> &
       React.KeyboardEvent<HTMLInputElement>
