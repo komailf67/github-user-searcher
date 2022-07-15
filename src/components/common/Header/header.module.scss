@@ -13,7 +13,7 @@
   color: #fff;
   svg {
     color: $white_color;
-    font-size: 1.5rem;
+    font-size: $svg_size;
     margin-right: 2rem;
   }
   .left {
@@ -22,6 +22,7 @@
     svg {
       color: $main_color;
       margin-right: 0.5rem;
+      font-size: $svg_size;
     }
   }
 }

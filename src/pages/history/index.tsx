@@ -22,16 +22,17 @@ const HistoryPage = () => {
         }
         title={'History'}
       />
-      <div className={styles.wrapper}>
-        <ul className={styles.lists}>
-          {!!history &&
-            history.map((username, index) => (
+      {!!history && (
+        <div className={styles.wrapper}>
+          <ul className={styles.lists}>
+            {history.map((username, index) => (
               <li key={index} onClick={() => handleSearchItem(username)}>
-                {username}
+                <h2>{username}</h2>
               </li>
             ))}
-        </ul>
-      </div>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

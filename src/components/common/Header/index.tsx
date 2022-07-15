@@ -12,7 +12,7 @@ const Header: React.FC<IHeaderProps> = (props) => {
     <div className={styles.header}>
       <div className={styles.left}>
         {leftIcon}
-        <h4>{title}</h4>
+        <h2>{title}</h2>
       </div>
       {rightIcon}
     </div>

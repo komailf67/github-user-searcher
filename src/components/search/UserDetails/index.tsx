@@ -11,6 +11,7 @@ import {
   FaInfoCircle,
 } from 'react-icons/fa';
 import Header from '../../common/Header';
+import InfoBoxe from './partials/InfoBox';
 interface IUserDetailsProps {
   data: TUserDetails;
 }
@@ -19,27 +20,21 @@ const UserDetails: React.FC<IUserDetailsProps> = (props) => {
   return (
     <>
       <div className={styles.list}>
-        <div className={styles.box}>
-          <FaDatabase />
-          <div>
-            <h4>{data.public_repos}</h4>
-            <h4>Repositories</h4>
-          </div>
-        </div>
-        <div className={styles.box}>
-          <FaUserFriends />
-          <div>
-            <h4>{data.followers}</h4>
-            <h4>Followers</h4>
-          </div>
-        </div>
-        <div className={styles.box}>
-          <FaUserCheck />
-          <div>
-            <h4>{data.following}</h4>
-            <h4>Followings</h4>
-          </div>
-        </div>
+        <InfoBoxe
+          icon={<FaDatabase />}
+          count={data.public_repos}
+          title="Repositories"
+        />
+        <InfoBoxe
+          icon={<FaUserFriends />}
+          count={data.followers}
+          title="Followers"
+        />
+        <InfoBoxe
+          icon={<FaUserCheck />}
+          count={data.following}
+          title="Followings"
+        />
       </div>
       <Header leftIcon={<FaInfoCircle />} title="User Info" />
       <div className={styles.info}>
@@ -49,34 +44,34 @@ const UserDetails: React.FC<IUserDetailsProps> = (props) => {
         <div className={styles.detailsWrapper}>
           <div className={styles.infoList}>
             <div className={styles.title}>
-              <h3>Username:</h3>
+              <h2>Username:</h2>
             </div>
             <div className={styles.infoValue}>
-              <h3>{data.login}</h3>
+              <h2>{data.login}</h2>
             </div>
           </div>
           <div className={styles.infoList}>
             <div className={styles.title}>
-              <h3>Name:</h3>
+              <h2>Name:</h2>
             </div>
             <div className={styles.infoValue}>
-              <h3>{data.name}</h3>
+              <h2>{data.name}</h2>
             </div>
           </div>
           <div className={styles.infoList}>
             <div className={styles.title}>
-              <h3>Email:</h3>
+              <h2>Email:</h2>
             </div>
             <div className={styles.infoValue}>
-              <h3>{data.email}</h3>
+              <h2>{data.email}</h2>
             </div>
           </div>
           <div className={styles.infoList}>
             <div className={styles.title}>
-              <h3>Bio:</h3>
+              <h2>Bio:</h2>
             </div>
             <div className={styles.infoValue}>
-              <h3>{data.bio}</h3>
+              <h2>{data.bio} </h2>
             </div>
           </div>
         </div>
@@ -88,12 +83,16 @@ const UserDetails: React.FC<IUserDetailsProps> = (props) => {
             {data.repos.map((item, index) => (
               <div key={index} className={styles.repoBox}>
                 <div className={styles.item}>
-                  <FaTumblr />
-                  <h4>{item.name}</h4>
+                  <div className={styles.iconWrapper}>
+                    <FaTumblr />
+                  </div>
+                  <h2>{item.name}</h2>
                 </div>
                 <div className={styles.item}>
-                  <FaPencilAlt />
-                  <h4>{item.language}</h4>
+                  <div className={styles.iconWrapper}>
+                    <FaPencilAlt />
+                  </div>
+                  <h2>{item.language}</h2>
                 </div>
                 <div
                   className={styles.item}
@@ -101,8 +100,10 @@ const UserDetails: React.FC<IUserDetailsProps> = (props) => {
                     window.open(item.html_url, '_blank');
                   }}
                 >
-                  <FaLink />
-                  <h4 className={styles.link}>{item.html_url}</h4>
+                  <div className={styles.iconWrapper}>
+                    <FaLink />
+                  </div>
+                  <h2 className={styles.link}>{item.html_url}</h2>
                 </div>
               </div>
             ))}

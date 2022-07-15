@@ -4,10 +4,11 @@
   margin-top: $vertical_margin;
   position: relative;
   input {
+    height: 5rem;
     background: $default_gradient;
     font-size: 1.5rem;
     color: $white_color;
-    padding: 1rem 3rem;
+    padding: 1rem 5rem;
     border: none;
     border-radius: 1rem;
     outline: none;
@@ -24,6 +25,7 @@
         left: 0%;
         transform: translate(100%, -50%);
         color: $white_color;
+        font-size: $svg_size;
       }
     }
     .historyIcon {
@@ -33,6 +35,20 @@
         right: 5%;
         transform: translate(100%, -50%);
         color: $white_color;
+        font-size: $svg_size;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    div {
+      .historyIcon {
+        svg {
+          right: 10%;
+          transform: translate(100%, -50%);
+        }
       }
     }
   }

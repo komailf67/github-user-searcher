@@ -1,0 +1,40 @@
+@import 'scss/variables';
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  text-decoration: none;
+  background: $default_gradient;
+  width: 33%;
+  height: 10rem;
+
+  div {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  h2 {
+    color: white;
+  }
+  svg {
+    color: red;
+    font-size: $svg_size;
+  }
+}
+
+@media (max-width: 601px) {
+  .box {
+    display: flex;
+    flex-direction: column;
+    div {
+      margin-left: 0rem;
+    }
+    svg {
+      font-size: $svg_size;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
