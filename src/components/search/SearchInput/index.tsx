@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import { FaHistory, FaSearch } from 'react-icons/fa';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { routes } from 'routes/routes';
 
 interface ISearchInputProps {
   fetchUser: (userName: string) => Promise<void>;
@@ -28,7 +29,7 @@ const SearchInput: React.FC<ISearchInputProps> = (props) => {
     }
   };
   const handleHistory = () => {
-    navigate('/history');
+    navigate(routes.history);
   };
   return (
     <div className={styles.form}>

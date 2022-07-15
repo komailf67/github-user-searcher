@@ -1,6 +1,7 @@
 import Header from 'components/common/Header';
 import { FaHistory, FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { routes } from 'routes/routes';
 import { LocalStorageHandler } from 'utils/localStorage';
 import styles from './index.module.scss';
 
@@ -9,7 +10,7 @@ const HistoryPage = () => {
   const history = storage.getUsers('history');
   const navigate = useNavigate();
   const handleSearchItem = (username: string) => {
-    navigate(`/search?username=${username}`);
+    navigate(`${routes.search}?username=${username}`);
   };
   return (
     <div>
@@ -17,7 +18,7 @@ const HistoryPage = () => {
         leftIcon={<FaHistory />}
         rightIcon={
           <div className={styles.search}>
-            <FaSearch onClick={() => navigate('/search')} />
+            <FaSearch onClick={() => navigate(routes.search)} />
           </div>
         }
         title={'History'}

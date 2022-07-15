@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import SearchPage from './pages/search';
-import HistoryPage from './pages/history';
+import SearchPage from '../pages/search';
+import HistoryPage from '../pages/history';
 
 function Routing() {
   return (
