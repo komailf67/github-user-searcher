@@ -12,6 +12,10 @@ const HistoryPage = () => {
   const handleSearchItem = (username: string) => {
     navigate(`${routes.search}?username=${username}`);
   };
+  const handleDeleteHistory = () => {
+    storage.clearAll();
+    navigate(routes.search);
+  };
   return (
     <div>
       <Header
@@ -24,15 +28,18 @@ const HistoryPage = () => {
         title={'History'}
       />
       {!!history && (
-        <div className={styles.wrapper}>
-          <ul className={styles.lists}>
-            {history.map((username, index) => (
-              <li key={index} onClick={() => handleSearchItem(username)}>
-                <h2>{username}</h2>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <>
+          <div className={styles.wrapper}>
+            <ul className={styles.lists}>
+              {history.map((username, index) => (
+                <li key={index} onClick={() => handleSearchItem(username)}>
+                  <h2>{username}</h2>
+                </li>
+              ))}
+            </ul>
+            <button onClick={handleDeleteHistory}>Delete all</button>
+          </div>
+        </>
       )}
     </div>
   );
